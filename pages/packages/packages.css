@@ -1,0 +1,149 @@
+/*────────────────────────────────────────────────────────────────────────────
+  Services Hero
+────────────────────────────────────────────────────────────────────────────*/
+.services-hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('../../assets/pictures/products.jpg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.services-hero__title {
+  font-size: 2.5rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.services-hero__subtitle {
+  font-size: 1.2rem;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  Packages Section
+────────────────────────────────────────────────────────────────────────────*/
+.services-packages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.package {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.package:hover {
+  transform: translateY(-5px);
+}
+
+.package__title {
+  font-size: 1.5rem;
+  color: #2B579A;
+  margin-bottom: 0.5rem;
+}
+
+.package__price {
+  font-size: 1.25rem;
+  color: #0078D4;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.package__features {
+  list-style: none;
+  padding-left: 0;
+   font-style: normal;
+}
+
+.package__features li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.package__features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0078D4;
+}
+
+.package button {
+  background-color: #0078D4;
+  color: #ffffff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.package button:hover {
+  background-color: #005ea2;
+  transform: translateY(-2px);
+}
+
+
+/*────────────────────────────────────────────────────────────────────────────
+  Add-ons Section
+────────────────────────────────────────────────────────────────────────────*/
+.services-addons {
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.services-addons__title {
+  font-size: 2rem;
+  color: #2B579A;
+  margin-bottom: 1.5rem;
+}
+
+.services-addons__list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.services-addons__list li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.services-addons__list li::before {
+  content: "➕";
+  position: absolute;
+  left: 0;
+  color: #0078D4;
+}
+
+.services-addons__list li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.services-addons__list li::before {
+  content: "➕";
+  position: absolute;
+  left: 0;
+  color: #0078D4;
+}
