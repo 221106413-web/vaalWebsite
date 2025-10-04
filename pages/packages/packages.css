@@ -165,6 +165,11 @@
 .fade-in--delay {
   animation-delay: 0.3s;
 }
+.fade-in--delay-2 {
+  animation-delay: 0.6s;
+}
+
+
 
 
 
