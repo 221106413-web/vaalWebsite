@@ -7,6 +7,8 @@
   padding: 4rem 2rem;
   text-align: center;
   color: white;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .services-hero__title {
@@ -147,3 +149,4 @@
   left: 0;
   color: #0078D4;
 }
+
