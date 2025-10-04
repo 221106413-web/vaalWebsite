@@ -1,0 +1,220 @@
+/* File: pages/home/home.css */
+
+/*────────────────────────────────────────────────────────────────────────────
+  1. Design tokens
+────────────────────────────────────────────────────────────────────────────*/
+:root {
+  --overlay-color:   rgba(0, 0, 0, 0.4);
+  --text-light:      #ffffff;
+  --btn-bg:          #ff6f61;
+  --btn-bg-hover:    #e65a4c;
+  --spacing-xl:      4rem;
+  --spacing-md:      2rem;
+  --transition-fast: 0.3s ease;
+  --font-heading:    'Segoe UI', Tahoma, sans-serif;
+  --font-body:       'Open Sans', Helvetica, sans-serif;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  2. Hero section: full-cover background
+────────────────────────────────────────────────────────────────────────────*/
+.content .home-hero {
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  overflow: hidden;
+
+  /* gradient overlay + full-cover image */
+  background:
+    linear-gradient(var(--overlay-color), var(--overlay-color)),
+    url("../../assets/pictures/pexels-goumbik-574069.jpg")
+      center center / cover no-repeat;
+
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.home-hero__intro {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 700px;
+  color: #444;
+}
+.techUsed__icons a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease;
+}
+.techUsed__icons a:hover {
+  transform: scale(1.1);
+}
+
+
+/*────────────────────────────────────────────────────────────────────────────
+  3. Hero typography
+────────────────────────────────────────────────────────────────────────────*/
+.content .home-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.content .home-hero__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-light);
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  4. Call-to-Action Button
+────────────────────────────────────────────────────────────────────────────*/
+.content .home-hero__btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--btn-bg);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.content .home-hero__btn:hover {
+  background-color: var(--btn-bg-hover);
+  transform: translateY(-2px);
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  5. Technologies-Used Section
+────────────────────────────────────────────────────────────────────────────*/
+.content .techUsed {
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 0.3s forwards;
+}
+
+.content .techUsed__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-md);
+  color: #333;
+}
+
+.content .techUsed__icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.content .techUsed__icon {
+  width: 60px;
+  height: auto;
+  transition: transform var(--transition-fast);
+}
+
+.content .techUsed__icon:hover {
+  transform: scale(1.2);
+}
+/*────────────────────────────────────────────────────────────────────────────
+  Expert Insights Section
+────────────────────────────────────────────────────────────────────────────*/
+.expert-insights {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.expert-insights__title {
+  font-size: 2.25rem;
+  color: #2B579A;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.expert-insights__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.expert-insights__card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  width: 320px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.expert-insights__card:hover {
+  transform: translateY(-5px);
+}
+
+.expert-insights__author {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0078D4;
+  margin-bottom: 0.25rem;
+}
+
+.expert-insights__role {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.expert-insights__quote {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.expert-insights__quote::before {
+  content: "“";
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  color: #0078D4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .expert-insights__card {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+/*────────────────────────────────────────────────────────────────────────────
+  6. Fade-In Keyframes
+────────────────────────────────────────────────────────────────────────────*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
