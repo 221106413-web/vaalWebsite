@@ -1,0 +1,213 @@
+/*────────────────────────────────────────────────────────────────────────────
+  Design Tokens
+────────────────────────────────────────────────────────────────────────────*/
+:root {
+  --primary:       #0078D4;
+  --primary-dark:  #005ea2;
+  --overlay-bg:    rgba(0, 0, 0, 0.6);
+  --text-light:    #ffffff;
+  --gap:           2rem;
+  --transition:    0.4s ease;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  Hero Section
+────────────────────────────────────────────────────────────────────────────*/
+.package-hero {
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('../../assets/pictures/pexels-goumbik-574069.jpg')
+    center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-light);
+
+  /* entrance animation */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.8s var(--transition) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  Template Grid & Cards
+────────────────────────────────────────────────────────────────────────────*/
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+.template-section {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.template-section:hover {
+  background-size: 110%;
+  transition: background-size var(--transition);
+}
+
+/* Dark overlay layer */
+.template-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+}
+
+/* Overlay content */
+/* Overlay content: pin to bottom center */
+.template-overlay {
+  position: absolute;        /* instead of relative */
+  bottom: 1.5rem;            /* push down */
+  left: 50%;                 /* center horizontally */
+  transform: translateX(-50%);
+  z-index: 1;
+  text-align: center;
+  color: var(--text-light);
+  padding: 1rem;
+  width: calc(100% - 2rem);  /* keep some side padding */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* Optional: add a little extra space above the buttons */
+.overlay-ctas {
+  margin-top: 0.5rem;
+}
+
+/* Two CTAs: demo + order */
+.overlay-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.overlay-ctas .cta-demo {
+  background: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.overlay-ctas .cta-demo:hover {
+  background-color: var(--text-light);
+  color: var(--primary-dark);
+}
+
+.overlay-ctas .cta-order {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.overlay-ctas .cta-order:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  Purchase Form
+────────────────────────────────────────────────────────────────────────────*/
+.purchase-form {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.purchase-form h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.purchase-form p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.purchase-form form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.submit-btn {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  Responsive Tweaks
+────────────────────────────────────────────────────────────────────────────*/
+@media (min-width: 768px) {
+  .package-hero {
+    padding: 6rem 2rem;
+  }
+}
