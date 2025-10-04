@@ -1,0 +1,99 @@
+/*────────────────────────────────────────────────────────────────────────────
+  About Hero
+────────────────────────────────────────────────────────────────────────────*/
+.about-hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('../../assets/pictures/pexels-goumbik-574069.jpg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.about-hero__title {
+  font-size: 2.5rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.about-hero__subtitle {
+  font-size: 1.2rem;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  About Sections
+────────────────────────────────────────────────────────────────────────────*/
+.about-section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-section__title {
+  font-size: 2rem;
+  color: #2B579A;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.about-section__text {
+  font-size: 1.1rem;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  color: #333;
+  line-height: 1.7;
+}
+.about-founder__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-founder__photo img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-founder__bio {
+  flex: 1;
+}
+
+.about-founder__logo img {
+  margin-top: 1rem;
+  width: 120px;
+  height: auto;
+}
+
+
+/*────────────────────────────────────────────────────────────────────────────
+  Lists
+────────────────────────────────────────────────────────────────────────────*/
+.about-values__list,
+.about-why__list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.05rem;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  color: #333;
+}
+
+.about-values__list li,
+.about-why__list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.about-values__list li::before,
+.about-why__list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0078D4;
+}
